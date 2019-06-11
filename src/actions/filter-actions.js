@@ -1,14 +1,14 @@
 import {
   UPDATE_UNPACKED_ITEMS_FILTER,
   UPDATE_PACKED_ITEMS_FILTER
-} from '../constants';
+} from "../constants";
 
-export const updateUnpackedItemsFilter = (text) => ({
+export const updateUnpackedItemsFilter = text => ({
   type: UPDATE_UNPACKED_ITEMS_FILTER,
-  text,
+  text
 });
 
-export const updatePackedItemsFilter = (text) => ({
+export const updatePackedItemsFilter = text => ({
   type: UPDATE_PACKED_ITEMS_FILTER,
-  text,
+  text
 });

@@ -1,10 +1,14 @@
-import { connect } from 'react-redux';
-import Items from '../components/Items';
+import { connect } from "react-redux";
+import Items from "../components/Items";
 
-import { toggleItem, removeItem } from '../actions/items-actions';
+import { toggleItem, removeItem } from "../actions/items-actions";
 
 const mapStateToProps = ({ items, filter }) => {
-  return { items: items.filter(item => item.packed && item.value.includes(filter.packedItemsFilter)) };
+  return {
+    items: items.present.filter(
+      item => item.packed && item.value.includes(filter.packedItemsFilter)
+    )
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -13,7 +17,10 @@ const mapDispatchToProps = dispatch => ({
   },
   onRemove(id) {
     dispatch(removeItem(id));
-  },
+  }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Items);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Items);

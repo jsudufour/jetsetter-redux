@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import './NewItem.css';
+import React, { Component } from "react";
+import "./NewItem.css";
 
 class NewItem extends Component {
-  handleChange = (event) => {
+  handleChange = event => {
     const value = event.target.value;
     this.props.updateNewItemValue(value);
-  }
+  };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     const { value } = this.props;
     this.props.addNewItem(value);
-  }
+  };
 
   render() {
     const { value } = this.props;

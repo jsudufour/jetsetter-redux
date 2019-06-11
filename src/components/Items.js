@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Item from './Item';
-import './Items.css';
+import React, { Component } from "react";
+import Item from "./Item";
+import "./Items.css";
 
 class Items extends Component {
   render() {
@@ -10,15 +10,15 @@ class Items extends Component {
         <h2>
           {title} ({items.length})
         </h2>
-        { this.props.render && this.props.render() }
+        {this.props.render && this.props.render()}
         {items.map(item => (
-            <Item
-              key={item.id}
-              onCheckOff={() => onCheckOff(item.id)}
-              onRemove={() => onRemove(item.id)}
-              {...item}
-            />
-          ))}
+          <Item
+            key={item.id}
+            onCheckOff={() => onCheckOff(item.id)}
+            onRemove={() => onRemove(item.id)}
+            {...item}
+          />
+        ))}
       </section>
     );
   }
