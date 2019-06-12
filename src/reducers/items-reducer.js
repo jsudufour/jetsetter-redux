@@ -23,7 +23,7 @@ export default function(state = {}, action) {
 
   if (action.type === TOGGLE_ITEM) {
     return state.map(item => {
-      if (item.id === action.id) return { ...item, packed: !item.packed };
+      if (item.id === action.id) return { ...action.item };
       return item;
     });
   }
